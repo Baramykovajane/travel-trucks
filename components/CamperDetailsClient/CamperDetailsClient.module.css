@@ -1,0 +1,42 @@
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 64px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  min-width: 0;
+  overflow: hidden;
+}
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reviewsTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.message {
+  text-align: center;
+  padding: 80px;
+  font-size: 18px;
+  color: var(--color-gray);
+}

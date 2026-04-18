@@ -1,0 +1,78 @@
+.hero {
+    width: 100%;
+}
+
+.wrap {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: calc(100vh - 72px);
+    min-height: 589px;
+    padding: 212px 64px 64px;
+    overflow: hidden;
+}
+
+.bgPicture {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(16, 24, 40, 0.1),
+            rgba(16, 24, 40, 0.6));
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 462px;
+    gap: 16px;
+}
+
+.title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.15;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.subtitle {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 16px 40px;
+    border-radius: 200px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: var(--color-primary);
+    transition: background-color 200ms ease;
+}
+
+.button:hover {
+    background-color: var(--color-primary-hover);
+}

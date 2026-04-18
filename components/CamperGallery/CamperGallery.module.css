@@ -1,0 +1,43 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.mainSwiper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.mainSlide {
+    position: relative;
+    width: 100%;
+    height: 505px;
+}
+
+.thumb {
+    position: relative;
+    height: 144px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.thumbSwiper {
+    width: 100%;
+}
+
+
+.thumb:global(.swiper-slide-thumb-active) {
+    opacity: 1;
+}
+
+.image {
+    object-fit: cover;
+}
