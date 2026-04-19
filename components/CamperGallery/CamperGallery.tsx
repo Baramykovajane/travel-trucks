@@ -7,10 +7,10 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import styles from './CamperGallery.module.css';
 
-interface CamperGalleryProps {
+type CamperGalleryProps = {
   images: string[];
   name: string;
-}
+};
 
 export default function CamperGallery({ images, name }: CamperGalleryProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
@@ -18,7 +18,6 @@ export default function CamperGallery({ images, name }: CamperGalleryProps) {
   return (
     <div className={styles.gallery}>
       <Swiper
-        loop
         navigation
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
@@ -27,7 +26,15 @@ export default function CamperGallery({ images, name }: CamperGalleryProps) {
         {images.map((src, i) => (
           <SwiperSlide key={i}>
             <div className={styles.mainSlide}>
-              <Image src={src} alt={`${name} ${i + 1}`} fill className={styles.image} />
+              <Image
+                src={src}
+                alt={`${name} ${i + 1}`}
+                fill
+                sizes="(min-width: 1440px) 600px, 50vw"
+                className={styles.image}
+                priority={i === 0}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
             </div>
           </SwiperSlide>
         ))}
@@ -35,7 +42,6 @@ export default function CamperGallery({ images, name }: CamperGalleryProps) {
 
       <Swiper
         onSwiper={setThumbsSwiper}
-        loop
         spaceBetween={12}
         slidesPerView={4}
         freeMode
@@ -46,7 +52,14 @@ export default function CamperGallery({ images, name }: CamperGalleryProps) {
         {images.map((src, i) => (
           <SwiperSlide key={i}>
             <div className={styles.thumb}>
-              <Image src={src} alt={`thumb ${i + 1}`} fill className={styles.image} />
+              <Image
+  src={src}
+  alt={`${name} ${i + 1}`}
+  fill
+  sizes="(min-width: 1440px) 600px, 50vw"
+  className={styles.image}
+  priority={i === 0}
+/>
             </div>
           </SwiperSlide>
         ))}

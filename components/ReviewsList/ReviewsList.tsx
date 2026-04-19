@@ -12,23 +12,21 @@ export default function ReviewsList({ reviews }: ReviewsListProps) {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <ul className={styles.list}>
-        {reviews.map((review, i) => (
-          <li key={i} className={styles.item}>
-            <div className={styles.header}>
-              <div className={styles.avatar}>
-                {review.reviewer_name.charAt(0).toUpperCase()}
-              </div>
-              <div>
-                <p className={styles.name}>{review.reviewer_name}</p>
-                <StarRating rating={review.reviewer_rating} />
-              </div>
+    <ul className={styles.list}>
+      {reviews.map((review, i) => (
+        <li key={i} className={styles.item}>
+          <div className={styles.header}>
+            <div className={styles.avatar}>
+              {review.reviewer_name.charAt(0).toUpperCase()}
             </div>
-            <p className={styles.comment}>{review.comment}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+            <div>
+              <p className={styles.name}>{review.reviewer_name}</p>
+              <StarRating rating={review.reviewer_rating} />
+            </div>
+          </div>
+          <p className={styles.comment}>{review.comment}</p>
+        </li>
+      ))}
+    </ul>
   );
 }

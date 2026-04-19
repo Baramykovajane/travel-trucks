@@ -28,6 +28,7 @@ export interface Camper {
   rating: number;
   location: string;
   form: CamperForm;
+  description: string;
   length: string;
   width: string;
   height: string;

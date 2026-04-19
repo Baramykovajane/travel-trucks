@@ -31,12 +31,14 @@ export default function CamperDetailsClient({ id }: Props) {
       </div>
 
       <div className={styles.bottom}>
-        <div className={styles.reviews}>
-          <h2 className={styles.reviewsTitle}>Reviews</h2>
-          <ReviewsList reviews={reviews} />
-        </div>
-        <BookingForm camperId={id} />
-      </div>
+  <div className={styles.reviews}>
+    <h2 className={styles.reviewsTitle}>Reviews</h2>
+    <div className={styles.reviewsBox}>
+      <ReviewsList reviews={reviews} />
+    </div>
+  </div>
+  <BookingForm camperId={id} />
+</div>
     </div>
   );
 }

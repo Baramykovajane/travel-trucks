@@ -4,34 +4,49 @@
   padding: 40px 64px 80px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
   min-width: 0;
   overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
 }
+
 .bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .reviews {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .reviewsTitle {
   font-size: 24px;
   font-weight: 600;
   color: var(--color-black);
+}
+
+.reviewsBox {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .message {
