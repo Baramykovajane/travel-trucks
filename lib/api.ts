@@ -7,7 +7,7 @@ const api = axios.create({
   baseURL: BASE_URL,
 });
 
-// GET /campers
+
 export const getCampers = async (
   filters: FilterParams,
   page: number
@@ -19,25 +19,21 @@ export const getCampers = async (
   return data;
 };
 
-// GET /campers/filters
 export const getCamperFilters = async () => {
   const { data } = await api.get('/campers/filters');
   return data;
 };
 
-// GET /campers/{camperId}
 export const getCamperById = async (id: string): Promise<CamperDetails> => {
   const { data } = await api.get<CamperDetails>(`/campers/${id}`);
   return data;
 };
 
-// GET /campers/{camperId}/reviews
 export const getReviews = async (id: string): Promise<Review[]> => {
   const { data } = await api.get<Review[]>(`/campers/${id}/reviews`);
   return data;
 };
 
-// POST /campers/{camperId}/booking-requests
 export const createBooking = async (
   camperId: string,
   payload: CreateBookingPayload

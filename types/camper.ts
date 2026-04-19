@@ -1,4 +1,4 @@
-// 🔹 Основні enum типи
+
 export type CamperForm =
   | "alcove"
   | "panel_van"
@@ -20,7 +20,7 @@ export type Amenity =
   | "gas"
   | "water";
 
-// 🔹 Camper (для списку)
+// Camper (для списку)
 export interface Camper {
   id: string;
   name: string;
@@ -41,7 +41,7 @@ export interface Camper {
   totalReviews: number;
 }
 
-// 🔹 Відповідь з пагінацією
+// Відповідь з пагінацією
 export interface CampersResponse {
   page: number;
   perPage: number;
@@ -50,7 +50,7 @@ export interface CampersResponse {
   campers: Camper[];
 }
 
-// 🔹 Фільтри
+// Фільтри
 export interface FilterParams {
  location?: string;
   form?: CamperForm;         
@@ -58,7 +58,7 @@ export interface FilterParams {
   engine?: Engine;          
 }
 
-// 🔹 Галерея
+// Галерея
 export interface GalleryItem {
   id: string;
   camperId: string;
@@ -67,7 +67,7 @@ export interface GalleryItem {
   order: number;
 }
 
-// 🔹 Детальна інформація про camper
+// Детальна інформація про camper
 export interface CamperDetails {
   id: string;
   name: string;
@@ -90,7 +90,7 @@ export interface CamperDetails {
   updatedAt: string;
 }
 
-// 🔹 Відгуки
+// Відгуки
 export interface Review {
   id: string;
   camperId: string;

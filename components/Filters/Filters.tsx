@@ -6,9 +6,6 @@ import { CamperForm, Engine, FilterParams, Transmission } from '@/types/camper';
 import styles from './Filters.module.css';
 import { IoClose } from 'react-icons/io5';
 
-/* =========================
-   OPTIONS
-========================= */
 
 const BODY_TYPES: { value: CamperForm; label: string }[] = [
   { value: 'alcove', label: 'Alcove' },
@@ -29,17 +26,11 @@ const TRANSMISSION_TYPES: { value: Transmission; label: string }[] = [
   { value: 'manual', label: 'Manual' },
 ];
 
-/* =========================
-   PROPS
-========================= */
 
 interface FiltersProps {
   onFilter: (filters: FilterParams) => void;
 }
 
-/* =========================
-   COMPONENT
-========================= */
 
 export default function Filters({ onFilter }: FiltersProps) {
   const [location, setLocation] = useState('');
@@ -47,9 +38,6 @@ export default function Filters({ onFilter }: FiltersProps) {
   const [engine, setEngine] = useState<Engine | ''>('');
   const [transmission, setTransmission] = useState<Transmission | ''>('');
 
-  /* =========================
-     TOGGLE (одиночний вибір)
-  ========================= */
 
   const toggleForm = (value: CamperForm) => {
     setForm((prev) => (prev === value ? '' : value));
@@ -63,9 +51,6 @@ export default function Filters({ onFilter }: FiltersProps) {
     setTransmission((prev) => (prev === value ? '' : value));
   };
 
-  /* =========================
-     ACTIONS
-  ========================= */
 
   const handleSearch = () => {
   const formattedLocation = location
@@ -88,9 +73,6 @@ export default function Filters({ onFilter }: FiltersProps) {
     onFilter({});
   };
 
-  /* =========================
-     UI
-  ========================= */
 
   return (
     <aside className={styles.filters}>
